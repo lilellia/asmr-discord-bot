@@ -1,0 +1,293 @@
+genders:
+  - male
+  - female
+  - any gender
+
+character_types:
+  - human
+  - alien
+  - werewolf
+  - elf
+  - dryad
+  - druid
+  - monster
+  - ghost
+  - friend
+  - enemy
+  - bakadere
+  - dog
+  - cat
+  - kemonomimi (animal ears)
+  - bully
+  - teacher
+  - potion seller
+  - sage
+  - deity
+  - villain
+  - hero
+  - mage
+  - yandere
+  - tsundere
+
+genres:
+  - classic/literary
+  - coming-of-age
+  - folklore (folktale)
+  - fable
+  - fairy tale
+  - ghost story
+  - legend
+  - myth
+  - parable
+  - personal narrative
+  - urban legend
+  - alternate history
+  - historical fantasy
+  - historical mystery
+  - historical romance
+  - regency romance
+  - nautical fiction
+  - pirate
+  - metafiction
+  - metaparody
+  - nonsense
+  - paranoid
+  - philosophical
+  - theological
+  - satire
+  - political thriller
+  - thriller/suspense
+  - conspiracy
+  - psychological
+  - romantic suspense
+  - techno-thriller
+  - urban
+  - western
+  - space western
+  - western romance
+  - weird west
+  - young adult
+  - action and adventure
+  - adventure fantasy
+  - heroic fantasy
+  - lost world
+  - sword-and-sandal
+  - sword-and-sorcery
+  - sword-and-soul
+  - wuxia
+  - nautical
+  - pirate
+  - Robinsonade
+  - spy
+  - superhero
+  - survival
+  - swashbuckler
+  - comedy
+  - comedy horror
+  - parody
+  - metaparody
+  - surreal comedy
+  - tall tale
+  - tragicomedy
+  - crime and mystery
+  - crime
+  - caper
+  - legal thriller
+  - mystery
+  - detective
+  - girl detective
+  - inverted detective story (aka howcatchem)
+  - occult detective
+  - hardboiled
+  - historical mystery
+  - locked-room mystery
+  - police procedural
+  - whodunit
+  - noir
+  - nordic noir
+  - tart noir
+  - speculative fiction
+  - fantasy
+  - heroic
+  - lost world
+  - subterranean fantasy
+  - wuxia
+  - contemporary
+  - occult detective fiction
+  - paranormal romance
+  - urban
+  - dark
+  - fairytale
+  - fantastique
+  - fantasy comedy
+  - bangsian
+  - fantasy of manners
+  - gaslamp
+  - gothic
+  - grimdark
+  - gritty
+  - hard
+  - high
+  - historical
+  - isekai
+  - juvenile
+  - low
+  - magic realism
+  - mythic
+  - mythopoeia
+  - mythpunk
+  - romantic
+  - horror
+  - body horror
+  - comedy
+  - zombie comedy
+  - ghost stories and ghostlore
+  - gothic horror
+  - american horror
+  - southern horror
+  - space horror
+  - suburban horror
+  - urban horror
+  - Japanese horror
+  - Korean horror
+  - Lovecraftian (or cosmic) horror
+  - monster literature
+  - jiangshi fiction
+  - werewolf fiction
+  - vampire literature
+  - psychological
+  - splatterpunk
+  - techno
+  - weird fiction
+  - weird menace
+  - weird west
+  - zombie apocalypse
+  - science fiction
+  - apocalyptic and post-apocalyptic
+  - utopian and dystopian
+  - dystopian
+  - cyberpunk
+  - biopunk
+  - dieselpunk
+  - Japanese cyberpunk
+  - nanopunk
+  - solarpunk
+  - steampunk
+  - utopian
+  - mecha
+  - military
+  - science fantasy
+  - planetary romance
+  - sword and planet
+  - space opera
+  - superhero
+  - tech noir
+  - techno-thriller
+
+tropes:
+  - enemies to lovers
+  - friends to lovers
+  - friends to enemies
+  - best friend's sibling
+  - best friend's lover
+  - best friend's ex
+  - fake relationship
+  - marriage pact
+  - innocent cohabitation
+  - pen pals
+  - matchmaker
+  - matchmaker gone wrong
+  - enemies
+  - old enemies
+  - love/hate
+  - nobody thinks it will work
+  - rivals
+  - bully turned nice guy
+  - revenge
+  - not good enough for them
+  - sworn off a relationship
+  - forbidden love/star-crossed lovers
+  - blind to love
+  - everyone can see it
+  - last to know
+  - fall in love with the wrong person
+  - amnesia
+  - secret admirer
+  - disguise
+  - secret royal/billionaire/boss
+  - mistaken identity
+  - two person love triangle (mistaken identity) eg superman
+  - secret/lost heir
+  - unrequited love
+  - mistaken declaration of love leads to love/can be coupled with marriage of honour
+  - rags to riches
+  - reality tv show
+  - fling/one night stand (can lead to unexpected baby)
+  - amnesia
+  - arranged marriage
+  - political marriage
+  - marriage before romance
+  - vegas/drunk marriage
+  - jilted bride
+  - runaway bride
+  - in love with best man/chief bridesmaid/groom/ etc
+  - marriage pact
+  - mistaken declaration of love leads to love
+  - trapped in an elevator
+  - stranded
+  - innocent cohabitation
+  - love triangle/imaginary love triangle
+  - if I can't have you, nobody will
+  - one true love/here we go again
+  - destined to be together/one true love/soulmate/fate
+  - love potion
+  - magic
+  - star-crossed lovers
+  - age gap ("May to December")
+  - long distance relationship
+  - second chance romance/first love
+  - belated love epiphany
+  - star-crossed lovers
+  - return to hometown/reunion romance
+  - the one that got away
+  - beauty and the beast
+  - playboy/rake in love
+  - loveable rogue
+  - date/fall in love with the wrong person
+  - wallflower
+  - blackmail
+  - antihero
+  - bully turned nice guy
+  - not good enough for him/her (POV of anyone)
+  - afraid to commit
+  - lovers in denial
+  - men in uniform
+  - politician
+  - priest
+  - bodyguard
+  - royal
+  - office romance/work colleagues/boss/employee
+  - working with the ex
+  - dark past
+  - dark secret
+  - emotional scars
+  - broken in some way
+  - rejected as unworthy by parents, friends or former lovers
+  - redemption
+  - break up to save him/her
+  - peril
+  - damsel/dude in distress
+  - kidnapped
+  - protector
+  - too dumb to live
+  - injury
+  - road trip
+  - opposites
+  - opposites attract
+  - social inferior/different social class/different worlds
+  - bet
+  - blind date
+  - fairytale retelling
+  - fish out of water
+  - time travel
+  - hypnosis
