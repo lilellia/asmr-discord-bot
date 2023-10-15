@@ -3,6 +3,22 @@ from loguru import logger
 import re
 
 
+filter_aliases = {
+    "name": "username",
+    "role": "writer or va",
+    "roles": "writer or va",
+    "genders": "script gender preferences",
+    "masterlist": "master list/youtube channel",
+    "master list": "master list/youtube channel",
+    "youtube": "master list/youtube channel",
+    "voices": "voice range",
+    "range": "voice range",
+    "links": "monetary/gift links",
+    "monetization": "monetization of scripts allowed",
+    "monetisation": "monetization of scripts allowed"
+}
+
+
 def parse_introduction(content: str) -> dict[str, str]:
     """Parse an introduction post and return the corresponding key-value pairs."""
     result: dict[str, str] = {}
@@ -10,8 +26,10 @@ def parse_introduction(content: str) -> dict[str, str]:
     for line in content.splitlines():
         if (match := re.fullmatch(r"(\*\*)?(?P<key>.*?):(\*\*)?\s*(?P<value>.*)", line)):
             key = match.group("key")
+            key = re.sub(r"\s*\(.*?\)", "", key)  # remove anything between parens
+
             value = match.group("value")
-            result[key] = value
+            result[key] = value.strip()
 
     return result
 
@@ -20,6 +38,7 @@ async def showinfo(response_channel: discord.TextChannel, user: str, *, introduc
     logger.debug(f"!showinfo {user}")
     async for message in introductions_channel.history(limit=500):
         if message.author.name.lower() != user.lower():
+            logger.debug(f"ignoring: {message.author.name}")
             continue
 
         logger.debug(f"Found user: {user}")
@@ -48,11 +67,25 @@ async def search_users(response_channel: discord.TextChannel, *, introductions_c
         }
 
         for search_key, allowed_values in filters.items():
-            overlap = user_data.get(search_key.lower(), set()) & allowed_values
-            if not overlap:
-                break
+            search_key = filter_aliases.get(search_key, search_key)
+            user_values = user_data.get(search_key.lower(), set())
+
+            if allowed_values == {"?"}:
+                # in this special case, we just allow *any* value to match
+                if not user_values:
+                    # value not set
+                    break
+
+                if len(user_values) == 1 and user_values.pop() in {"", "-", "n/a", "none"}:
+                    # we'll interpret these as also not set
+                    logger.debug(f"interpreting {user_values} as UNSET")
+                    break
+            else:
+                overlap = user_values & allowed_values
+                if not overlap:
+                    break
         else:
-            filtered_users.append(user_data["name"].pop())
+            filtered_users.append(user_data["username"].pop())
 
     logger.debug(f"Found: {filtered_users}")
 

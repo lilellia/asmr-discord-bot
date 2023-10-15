@@ -12,7 +12,19 @@ Show the information for the given user, taken from the introductions channel.
 `!searchuser filters...`
 Search the introductions for users which match the given filters. Examples:
 `!searchuser name=alice & roles=VA`
-`!searchuser roles=writer & genres=fantasy, slice-of-life` (will show writers tagged with fantasy OR slice-of-life)
+`!searchuser roles=writer & tags=fantasy, slice-of-life` (will show writers tagged with fantasy OR slice-of-life)
+
+__Filter key aliases:__
+- "Username" ⟶ "name"
+- "Writer or VA" ⟶ "role", "roles"
+- "Script gender preferences" ⟶ "genders"
+- "Voice range" ⟶ "voices", "range"
+- "Master list/Youtube channel" ⟶ "master list", "masterlist", "youtube"
+- "Monetary/gift links" ⟶ "links"
+- "Monetization of scripts allowed" ⟶ "monetization", "monetisation"
+
+__Use of filter=?__
+Using `!searchuser key=?` will allow find all users who have specified ANY value for the given key (except "N/A", "None", "-")
 
 `!genprompt`
 Randomly generate a script prompt.
