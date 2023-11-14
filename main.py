@@ -124,6 +124,9 @@ async def on_message(message: discord.Message):
     elif directive in ("help",):
         await commands.show_help(response_channel=message.channel)
 
+    elif directive in ("timestamp", "ts"):
+        await commands.generate_timestamp(time_str=argument, response_channel=message.channel)
+
     elif directive in ("xagfs",):
         channel_id, *remainder = argument.split(" ")
         channel = get_text_channel(int(channel_id))
