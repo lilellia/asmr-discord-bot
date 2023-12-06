@@ -36,6 +36,14 @@ Display information for the most recent video uploaded by the YouTube account wi
 `!video-info videoID`
 Display information for the given video.
 `!video-info ABCXYZ` will show information for `https://youtube.com/watch?v=ABCXYZ`
+
+`!timestamp time` (alias: `!ts`)
+Generate a Discord timestamp which will automatically display the time in each user's timezone`
+`!timestamp Dec 12 2023 8am EST`
+
+`!timezone TZ time` (alias: `!tz`)
+Convert the given time into the given timezone.
+`!timezone GMT Dec 12 2023 8am EST` will show `12 Dec 2023 13:00:00 GMT`
 """
     embed = discord.Embed(
         title="Help",

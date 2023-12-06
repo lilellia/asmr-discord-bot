@@ -127,6 +127,11 @@ async def on_message(message: discord.Message):
     elif directive in ("timestamp", "ts"):
         await commands.generate_timestamp(time_str=argument, response_channel=message.channel)
 
+    elif directive in ("timezone", "tz"):
+        dest_timezone, *args = argument.split()
+        time_str = " ".join(args)
+        await commands.convert_timezone(time_str, dest_timezone, response_channel=message.channel)
+
     elif directive in ("xagfs",):
         channel_id, *remainder = argument.split(" ")
         channel = get_text_channel(int(channel_id))
