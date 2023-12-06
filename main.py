@@ -128,9 +128,9 @@ async def on_message(message: discord.Message):
         await commands.generate_timestamp(time_str=argument, response_channel=message.channel)
 
     elif directive in ("timezone", "tz"):
-        dest_timezone, *args = argument.split()
-        time_str = " ".join(args)
-        await commands.convert_timezone(time_str, dest_timezone, response_channel=message.channel)
+        time_str, timezones = argument.split("in")
+        timezones = timezones.split()
+        await commands.convert_timezone(time_str, timezones, response_channel=message.channel)
 
     elif directive in ("xagfs",):
         channel_id, *remainder = argument.split(" ")

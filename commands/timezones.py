@@ -27,8 +27,8 @@ async def generate_timestamp(time_str: str, response_channel: discord.TextChanne
         await response_channel.send("I could not process that time string.")
 
 
-async def convert_timezone(time_str: str, dest_timezone: str, response_channel: discord.TextChannel) -> None:
-    logger.debug(f"!tz {dest_timezone} // {time_str}")
+async def convert_timezone(time_str: str, timezones: list[str], response_channel: discord.TextChannel) -> None:
+    logger.debug(f"!tz {time_str} in {timezones}")
 
     dt = dateparser.parse(time_str)
 
@@ -36,11 +36,16 @@ async def convert_timezone(time_str: str, dest_timezone: str, response_channel: 
         await response_channel.send("I could not parse that time string.")
         return
 
-    try:
-        tz = pytz.timezone(dest_timezone)
-    except pytz.UnknownTimeZoneError:
-        await response_channel.send("I could not understand that conversion timezone.")
-        return
+    results: list[str] = []
+    for tzname in timezones:
+        try:
+            tz = pytz.timezone(tzname)
+        except pytz.UnknownTimeZoneError:
+            await response_channel.send(f"I could not understand that conversion timezone: {tzname}.")
+            return
 
-    result = dt.astimezone(tz).strftime("%d %b %Y %H:%M:%S %Z")
-    await response_channel.send(f"{time_str} = {result}")
+        conversion = dt.astimezone(tz).strftime("%d %b %Y %H:%M:%S %Z")
+        results.append(conversion)
+
+    result = "\n".join(f"= {conversion}" for conversion in results)
+    await response_channel.send(f"{time_str}{result}")
